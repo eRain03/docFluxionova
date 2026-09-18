@@ -1,0 +1,1561 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>客服手册 · 跃行·行车宝</title>
+<meta name="description" content="跃行·行车宝 电商客服培训手册：功能清单、能力边界、红线话术、高频与刁钻问答，支持搜索与打印。">
+<!-- 单文件交付：样式与脚本全部内联，无外部请求；同样内容的令牌另存 docs/tokens.css 供复用。 -->
+<style>
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R4 V4 */
+/* Hallmark · macrostructure: Long Document · H4 inline section heads: label=mono-stack, body=single column
+ * theme: custom · vibe: "车间手册 · 纸感 · 可查 · 克制" · paper: oklch(97.5% 0.010 262) · accent: oklch(52% 0.19 259)
+ * display: Source Han Serif SC · body: PingFang SC · axes: light / roman-serif / cool
+ * studied: no · context: inferred · v1.1.0
+ * contrast: pass (40–41) · nav: N3 · footer: Ft2 · slop: pass (42–45) · mobile: pass (34, 49, 50–57) · tokens: pass (48)
+ */
+
+:root {
+  --color-paper: oklch(97.5% 0.010 262);
+  --color-paper-2: oklch(99.4% 0.006 262);
+  --color-paper-3: oklch(95.0% 0.014 262);
+  --color-ink: oklch(23% 0.032 262);
+  --color-ink-2: oklch(42% 0.028 262);
+  --color-muted: oklch(52% 0.022 262);
+  --color-rule: oklch(90.5% 0.014 262);
+  --color-rule-2: oklch(94.5% 0.011 262);
+  --color-accent: oklch(52% 0.19 259);
+  --color-accent-ink: oklch(98.5% 0.008 262);
+  --color-accent-soft: oklch(94.5% 0.030 259);
+  --color-focus: oklch(56% 0.21 259);
+  --color-danger: oklch(48% 0.19 25);
+  --color-danger-soft: oklch(96% 0.022 25);
+  --color-ok: oklch(44% 0.13 152);
+  --color-ok-soft: oklch(96.5% 0.020 152);
+  --color-warn: oklch(45% 0.12 70);
+  --color-warn-soft: oklch(96.5% 0.030 80);
+
+  --font-display: "Source Han Serif SC", "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif SC", Georgia, "Times New Roman", serif;
+  --font-body: "PingFang SC", "HarmonyOS Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+  --font-label: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  --text-xs: 12.5px;
+  --text-sm: 13.5px;
+  --text-base: 15.5px;
+  --text-lg: 17px;
+  --text-xl: 21px;
+  --text-2xl: 27px;
+  --text-display: clamp(30px, 4.4vw, 43px);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 130ms;
+  --dur-base: 180ms;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --shadow-panel: 0 18px 40px -20px oklch(30% 0.05 262 / 0.35);
+  --measure: 68ch;
+  --rail-w: 264px;
+  --page-max: 1160px;
+  --bar-h: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--color-accent-soft); }
+
+a { color: var(--color-accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--color-ink); }
+a:active { color: var(--color-ink); }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-style: normal; font-weight: 600; overflow-wrap: anywhere; min-width: 0; }
+p { margin: 0 0 var(--space-sm); max-width: var(--measure); }
+ul, ol { max-width: var(--measure); margin: 0 0 var(--space-sm); padding-left: var(--space-md); }
+li { margin-bottom: var(--space-3xs); }
+strong { font-weight: 700; }
+code {
+  font-family: var(--font-label);
+  font-size: 0.92em;
+  background: var(--color-paper-3);
+  border-radius: var(--radius-sm);
+  padding: 1px var(--space-3xs);
+  overflow-wrap: anywhere;
+}
+mark { background: var(--color-accent-soft); color: inherit; border-radius: 3px; padding: 0 2px; }
+
+.skip {
+  position: absolute;
+  left: var(--space-sm);
+  top: -80px;
+  z-index: calc(var(--z-sticky-nav) + 10);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: top var(--dur-base) var(--ease-out);
+}
+.skip:focus { top: var(--space-sm); color: var(--color-accent-ink); }
+.skip:active { color: var(--color-accent-ink); }
+
+/* ===== 外壳：侧栏 + 阅读栏 ===== */
+.shell {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md) var(--space-2xl);
+  display: grid;
+  grid-template-columns: var(--rail-w) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.doc { min-width: 0; }
+
+/* ===== 侧栏（N3 side-rail）===== */
+.rail {
+  position: sticky;
+  top: var(--space-md);
+  z-index: var(--z-sticky);
+}
+
+.rail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+}
+
+.mark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  line-height: 1.2;
+  color: var(--color-ink);
+  letter-spacing: 0.01em;
+}
+.mark span {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+  margin-top: var(--space-3xs);
+}
+
+.rail-toggle {
+  display: none;
+  align-items: center;
+  height: 36px;
+  padding: 0 var(--space-xs);
+  font: inherit;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.rail-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.rail-toggle[aria-expanded="true"] { border-color: var(--color-accent); color: var(--color-accent); }
+.rail-toggle:active { transform: translateY(1px); }
+.rail-toggle[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+/* 搜索：全状态 */
+.search { margin: var(--space-md) 0 0; max-width: none; }
+.search label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+  margin-bottom: var(--space-3xs);
+}
+.search input {
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--space-xs);
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+.search input::placeholder { color: var(--color-muted); }
+.search input:hover { border-color: var(--color-ink-2); }
+.search input:focus-visible { outline-color: var(--color-focus); border-color: var(--color-accent); }
+.search input[disabled] { opacity: 0.55; cursor: not-allowed; background: var(--color-paper-3); }
+.search-meta {
+  min-height: 1lh;
+  margin: var(--space-3xs) 0 0;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+.search-meta[data-tone="hit"] { color: var(--color-accent); }
+.search-meta[data-tone="miss"] { color: var(--color-warn); }
+
+/* 目录 */
+.toc { margin: var(--space-md) 0 0; padding: 0; list-style: none; max-width: none; }
+.toc li { margin: 0; }
+.toc a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-3xs) var(--space-2xs) var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+.toc a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 60%;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transform: translateY(-50%) scaleY(0);
+  transform-origin: center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.toc a:hover { color: var(--color-ink); background: var(--color-paper-2); }
+.toc a:active { background: var(--color-paper-3); }
+.toc a[aria-current="true"] { color: var(--color-accent); background: var(--color-accent-soft); }
+.toc a[aria-current="true"]::before { transform: translateY(-50%) scaleY(1); }
+.toc .num {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.toc a[aria-current="true"] .num { color: var(--color-accent); }
+
+.rail-foot {
+  margin: var(--space-md) 0 0;
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-rule-2);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* ===== 封面 ===== */
+.masthead { padding-bottom: var(--space-2xl); }
+.kicker {
+  margin: 0 0 var(--space-2xs);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+}
+.masthead h1 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-display);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+.lede { font-size: var(--text-lg); line-height: 1.72; color: var(--color-ink-2); max-width: 46ch; }
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-lg);
+  margin: var(--space-lg) 0 0;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-rule);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.meta-row div { white-space: nowrap; }
+.meta-row b { display: block; font-weight: 400; color: var(--color-ink-2); }
+
+/* ===== 章节 ===== */
+.chapter { position: relative; padding-top: var(--space-2xl); scroll-margin-top: var(--space-lg); }
+.chapter + .chapter { border-top: 1px solid var(--color-rule-2); }
+
+.chap-label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+}
+.chapter h2 {
+  display: block;
+  margin: var(--space-2xs) 0 var(--space-sm);
+  font-size: var(--text-2xl);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  max-width: var(--measure);
+}
+.chapter h3 {
+  margin: var(--space-lg) 0 var(--space-2xs);
+  font-size: var(--text-xl);
+  line-height: 1.4;
+  max-width: var(--measure);
+}
+.chapter h4 {
+  margin: var(--space-md) 0 var(--space-3xs);
+  font-size: var(--text-lg);
+  line-height: 1.45;
+  max-width: var(--measure);
+}
+.chapter h2:focus-visible, .chapter h3:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+.chapter.is-jump::before {
+  content: "";
+  position: absolute;
+  inset: var(--space-lg) calc(var(--space-sm) * -1) 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  animation: jumpFade 1100ms var(--ease-out) 1;
+}
+@keyframes jumpFade { from { opacity: 0.85; } to { opacity: 0; } }
+
+/* ===== 表格 ===== */
+.tablewrap {
+  margin: var(--space-sm) 0 var(--space-md);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule-2);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); line-height: 1.62; }
+caption {
+  caption-side: top;
+  text-align: left;
+  padding: var(--space-xs) var(--space-sm) 0;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+th, td { padding: var(--space-2xs) var(--space-sm); text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-rule-2); overflow-wrap: anywhere; }
+thead th {
+  background: var(--color-paper-3);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  color: var(--color-ink-2);
+  white-space: nowrap;
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody th { font-weight: 600; color: var(--color-ink); }
+
+.t-compact td:first-child, .t-compact th[scope="row"] { white-space: nowrap; }
+
+/* ===== 提示块 ===== */
+.note {
+  margin: var(--space-sm) 0 var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  max-width: calc(var(--measure) + 60px);
+}
+.note > :last-child { margin-bottom: 0; }
+.note-label {
+  display: block;
+  margin-bottom: var(--space-3xs);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+.note--danger { background: var(--color-danger-soft); border-color: var(--color-danger); }
+.note--danger .note-label { color: var(--color-danger); }
+.note--ok { background: var(--color-ok-soft); border-color: var(--color-ok); }
+.note--ok .note-label { color: var(--color-ok); }
+.note--warn { background: var(--color-warn-soft); border-color: var(--color-warn); }
+.note--warn .note-label { color: var(--color-warn); }
+
+/* ===== 问答条目 ===== */
+.qa { max-width: var(--measure); padding: var(--space-sm) 0; border-top: 1px solid var(--color-rule-2); }
+.qa:first-of-type { border-top: 0; padding-top: var(--space-2xs); }
+.qa[hidden] { display: none; }
+.qa h3 { margin: 0 0 var(--space-2xs); }
+.qa .qid {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  margin-right: var(--space-2xs);
+  letter-spacing: 0.06em;
+}
+.qa p:last-child { margin-bottom: 0; }
+
+/* 话术块 */
+.say {
+  position: relative;
+  margin: var(--space-2xs) 0 var(--space-2xs);
+  padding: var(--space-xs) var(--space-sm) var(--space-2xs);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+}
+.say p { margin: 0 0 var(--space-2xs); font-size: var(--text-sm); }
+.say p:last-child { margin-bottom: 0; }
+.say-actions { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2xs); }
+.say-note { margin-right: auto; font-size: var(--text-xs); color: var(--color-muted); }
+
+.copy {
+  height: 32px;
+  padding: 0 var(--space-xs);
+  font-family: inherit;
+  font-size: var(--text-xs);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--color-ink-2);
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.copy:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.copy:focus-visible { outline-color: var(--color-focus); }
+.copy:active { transform: translateY(1px); }
+.copy[disabled] { opacity: 0.55; cursor: not-allowed; }
+.copy.is-done { background: var(--color-ok-soft); border-color: var(--color-ok); color: var(--color-ok); }
+
+.empty-state {
+  display: none;
+  margin: var(--space-sm) 0 0;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-warn-soft);
+  border: 1px solid var(--color-warn);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-warn);
+  max-width: var(--measure);
+}
+.empty-state.is-on { display: block; }
+
+/* ===== 页脚（Ft2）===== */
+.colophon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-sm);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-rule);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.colophon span { white-space: nowrap; }
+
+/* ===== 移动端 ===== */
+@media (min-width: 901px) {
+  .rail {
+    max-height: calc(100dvh - var(--space-xl));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: var(--space-3xs);
+  }
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-md) var(--space-sm) var(--space-xl);
+  }
+  .rail { position: static; }
+  .rail-head {
+    position: sticky;
+    top: 0;
+    min-height: var(--bar-h);
+    padding: var(--space-2xs) 0;
+    background: var(--color-paper);
+    border-bottom: 1px solid var(--color-rule-2);
+    z-index: var(--z-sticky-nav);
+  }
+  .rail-toggle { display: inline-flex; align-items: center; }
+  .rail-body {
+    display: none;
+    position: fixed;
+    left: var(--space-sm);
+    right: var(--space-sm);
+    top: calc(var(--bar-h) + var(--space-2xs));
+    z-index: var(--z-sticky-nav);
+    max-height: 68vh;
+    overflow: auto;
+    padding: var(--space-xs) var(--space-sm) var(--space-sm);
+    background: var(--color-paper-2);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-panel);
+  }
+  .rail.is-open .rail-body { display: block; }
+  .search { margin-top: var(--space-sm); }
+  .masthead { padding-bottom: var(--space-xl); }
+  .chapter { padding-top: var(--space-xl); scroll-margin-top: calc(var(--bar-h) + var(--space-2xs)); }
+  .lede { font-size: var(--text-base); }
+  th, td { padding: var(--space-2xs) var(--space-xs); }
+}
+
+@media (max-width: 480px) {
+  .meta-row { gap: var(--space-2xs) var(--space-md); }
+  .qa h3 { font-size: var(--text-base); }
+  .t-compact td:first-child, .t-compact th[scope="row"] { white-space: normal; }
+  thead th { white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+  .chapter.is-jump::before { animation: none; opacity: 0; }
+}
+
+@media print {
+  html, body { background: var(--color-paper-2); color: var(--color-ink); }
+  .rail, .skip, .copy, .search, .say-actions { display: none !important; }
+  .shell { display: block; max-width: none; padding: 0; }
+  .chapter { padding-top: var(--space-lg); border-top: 1px solid var(--color-rule-2); }
+  .chapter:first-of-type { border-top: 0; }
+  .qa, .note, .tablewrap { break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+  .toc a[aria-current="true"] { background: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#doc">跳到正文</a>
+
+<div class="shell">
+  <header class="rail" id="rail">
+    <div class="rail-head">
+      <p class="mark">跃行·行车宝<span>客服手册</span></p>
+      <button class="rail-toggle" id="railToggle" type="button" aria-expanded="false" aria-controls="railBody">目录</button>
+    </div>
+
+    <div class="search">
+      <label for="q">查一句话</label>
+      <input id="q" type="search" autocomplete="off" placeholder="例：里程 / 年检 / 退货" aria-describedby="qMeta">
+      <p class="search-meta" id="qMeta" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="rail-body" id="railBody">
+      <nav aria-label="章节目录">
+        <ol class="toc" id="toc">
+          <li><a href="#ch-01"><span class="num">01</span>产品认知</a></li>
+          <li><a href="#ch-02"><span class="num">02</span>功能全景</a></li>
+          <li><a href="#ch-03"><span class="num">03</span>兼容性</a></li>
+          <li><a href="#ch-04"><span class="num">04</span>连接与使用</a></li>
+          <li><a href="#ch-05"><span class="num">05</span>客服红线</a></li>
+          <li><a href="#ch-06"><span class="num">06</span>高频问答</a></li>
+          <li><a href="#ch-07"><span class="num">07</span>刁钻问题</a></li>
+          <li><a href="#ch-08"><span class="num">08</span>升级技服</a></li>
+          <li><a href="#ch-09"><span class="num">09</span>话术模板</a></li>
+          <li><a href="#ch-10"><span class="num">10</span>速查表</a></li>
+          <li><a href="#appendix"><span class="num">—</span>待补充信息</a></li>
+        </ol>
+      </nav>
+      <p class="rail-foot">版本 v1 · 2026-09<br>维护：产品侧</p>
+    </div>
+  </header>
+
+  <main class="doc" id="doc">
+    <header class="masthead">
+      <p class="kicker">石家庄欣流跃迁信息科技有限公司</p>
+      <h1>电商客服手册</h1>
+      <p class="lede">从"这是什么"到"读不到数据是不是坏了"，每一句该怎么说、哪句话绝对不能说，都在这里。</p>
+      <div class="meta-row">
+        <div>适用<b>天猫 · 京东 · 抖音 · 拼多多 · 微信小店</b></div>
+        <div>产品<b>OBD 蓝牙盒子 + 微信小程序</b></div>
+        <div>读完<b>约需一次班前会</b></div>
+        <div>更新<b>2026-09</b></div>
+      </div>
+    </header>
+
+    <section class="chapter" id="ch-01">
+      <span class="chap-label">01 · 产品认知</span>
+      <h2>一分钟讲清我们卖的是什么</h2>
+
+      <p><strong>一句话：</strong>插在车上 OBD 接口的一个蓝牙小盒子，加一个微信小程序，让车主自己看懂自己的车——读故障码、测电瓶、看实时数据、查年检能不能过。</p>
+
+      <h3>车主为什么买</h3>
+      <ul>
+        <li>车上亮了故障灯，去修理厂读一次码 50~100 元，还得跑一趟；插上自己就能看</li>
+        <li>保养完仪表上的"立即保养"提示要消，4S 店才给消；自己两下就好</li>
+        <li>买二手车、年检前，先自己过一遍，心里有底</li>
+      </ul>
+
+      <h3>和手机 App 类产品的区别</h3>
+      <ul>
+        <li>微信小程序，不用下载 App、不用注册、不用买会员，扫码即用</li>
+        <li>外接硬件做工位数据网关，手机连的是盒子，不占用手机直连 OBD</li>
+      </ul>
+
+      <h3>产品构成</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">部分</th><th scope="col">说明</th><th scope="col">收费</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">硬件盒子</th><td>插在车辆 OBD 接口，蓝牙（BLE）连接手机</td><td>一次性购买</td></tr>
+            <tr><th scope="row">小程序「跃行·行车宝」</th><td>全部功能都在小程序里</td><td>当前免费</td></tr>
+            <tr><th scope="row">私人汽修顾问「小跃」</th><td>小程序里的对话式顾问，支持语音提问</td><td>当前免费</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <span class="note-label">品牌口径</span>
+        <p>公司主体是<strong>石家庄欣流跃迁信息科技有限公司</strong>，顾问的名字叫<strong>小跃</strong>。客户问"你们是谁做的"，照这个说，不要自由发挥。</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch-02">
+      <span class="chap-label">02 · 功能全景</span>
+      <h2>功能全景</h2>
+      <p>小程序底部三个入口：<strong>首页 / 私人汽修顾问 / 我的</strong>。首页进「全部功能」，功能分五个模块。</p>
+
+      <h3>智能诊断</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">功能</th><th scope="col">一句话卖点</th><th scope="col">客服怎么讲</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">故障扫描</th><td>一键深度扫描全车电控系统故障码，带中文解释</td><td>扫完能看到"是什么码、什么意思、严重不严重、能不能继续开"；还能看<strong>冻结帧</strong>——故障发生那一刻的数据快照，修车师傅最认这个</td></tr>
+            <tr><th scope="row">电瓶检测</th><td>三步测电瓶健康度：静置电压 → 启动压降 → 充电电压</td><td>3 分钟出结果，不用去店里，判断"该换了"还是"还能用"</td></tr>
+            <tr><th scope="row">车况测评</th><td>给爱车打个分（优秀 / 良好 / 一般）</td><td>不用懂原理，看分数和扣分原因就行</td></tr>
+            <tr><th scope="row">CAN 调试</th><td>实时数据流：转速、车速、水温、油耗等</td><td>分「当前状态」和「高级数据」两页；高级数据是车企私有协议数据，能读到油量、里程这类标准 OBD 读不到的东西</td></tr>
+            <tr><th scope="row">ECU 信息</th><td>查看车上各控制单元（ECU）的信息</td><td>换 ECU、查配置的时候用</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>检测评估</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">功能</th><th scope="col">一句话卖点</th><th scope="col">客服怎么讲</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">年检预审</th><td>年检前先自检一遍，把能提前处理的问题挑出来</td><td>查故障灯、故障码、<strong>排放监测就绪状态</strong>、电瓶、冷却、电压稳定，加灯光/制动/轮胎自查，最后给"可以去年检 / 建议先处理"的结论</td></tr>
+            <tr><th scope="row">性能测试</th><td>测 0-100 加速、0-402 米、刹车距离、刹车时间</td><td>想验证车状态，或对比改装前后效果可以用</td></tr>
+            <tr><th scope="row">部件测试</th><td>按部件查：发动机、电瓶、制动、转向、变速箱、胎压、灯光、空调</td><td>相当于一张体检表，逐项过</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <span class="note-label">差异化点</span>
+        <p>年检预审里的<strong>就绪状态</strong>是关键：很多人年检 OBD 项不过，就是因为刚清完码、排放监测还没跑完。我们能直接看到哪几项没就绪。</p>
+      </div>
+
+      <h3>车辆工具</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">功能</th><th scope="col">一句话卖点</th><th scope="col">客服怎么讲</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">记油耗</th><td>每次加油记一笔，自动算真实油耗</td><td>车机显示的油耗是估算，这个是对账算出来的</td></tr>
+            <tr><th scope="row">车型配置</th><td>按品牌加载该车型的私有协议数据</td><td>想要油量、里程这类"原厂才有"的数据，得先选对车型配置</td></tr>
+            <tr><th scope="row">VIN 识车</th><td>读车架号自动认车型，也支持扫条形码</td><td>不用手动输 17 位 VIN，拍照或扫码就行</td></tr>
+            <tr><th scope="row">横屏仪表</th><td>手机横过来当仪表盘用</td><td>转速表、水温、电压大字号显示</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>高级服务（汽修店级别的功能）</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">功能</th><th scope="col">一句话卖点</th><th scope="col">客服怎么讲</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">服务功能</th><td>保养灯归零、电子手刹（EPB）维修模式、转向角标定、变速箱自适应学习重置等</td><td>换完刹车片要用维修模式才能收电子手刹；保养完要消保养提醒</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>「服务功能」页分三层，客服要能说清楚：</p>
+      <ol>
+        <li><strong>按车型匹配的模板</strong>——识别到你的车型，自动给出该车型的归零步骤（现代、起亚这类需要安全访问，程序会自动算密钥）</li>
+        <li><strong>精选功能</strong>——8 个常用中文名功能，一步步带操作</li>
+        <li><strong>更多实验性功能</strong>——默认折叠，里面带风险提示，很多标注"未验证"</li>
+      </ol>
+      <div class="note note--danger">
+        <span class="note-label">话术要求</span>
+        <p>实验性功能一律说明："这部分是给动手能力强的用户准备的，执行前请确认每一步的含义，风险由操作者自行承担。"</p>
+      </div>
+
+      <h3>数据记录</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">功能</th><th scope="col">一句话卖点</th><th scope="col">客服怎么讲</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">行程管理</th><td>每次出行自动记录里程、时长、平均油耗</td><td>不用手动记</td></tr>
+            <tr><th scope="row">数据记录器</th><td>高速采样，可导出 CSV</td><td>修车师傅排查间歇性故障时，可以把数据导出做分析</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>首页与顾问</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">模块</th><th scope="col">说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">实时数据</th><td>转速、车速、水温、瞬时油耗，数据做了平滑处理，不是一跳一跳的</td></tr>
+            <tr><th scope="row">报警提醒</th><td>水温 &gt;105℃、电压 &lt;11.8V 或 &gt;15.2V、转速 &gt;6000、车速 &gt;130 自动报警（声音加提示），阈值可在「我的」里改</td></tr>
+            <tr><th scope="row">本次行程</th><td>里程、时长、平均油耗</td></tr>
+            <tr><th scope="row">私人汽修顾问「小跃」</th><td>能读到你车上的数据（故障码、水温、电压、油耗）再回答，支持按住说话语音提问</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <span class="note-label">推荐话术</span>
+        <p>顾问的差异不是"能聊天"，而是<strong>它看得到你车的数据</strong>。可以这样说："你问它'我车怠速有点抖'，它会结合你车上的实时数据和水温来判断。"</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch-03">
+      <span class="chap-label">03 · 兼容性</span>
+      <h2>兼容性</h2>
+
+      <h3>能测什么车</h3>
+      <div class="tablewrap">
+        <table class="t-compact">
+          <thead>
+            <tr><th scope="col">车型</th><th scope="col">支持情况</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">2008 年后汽油车（国三及以上）</th><td>标准 OBD-II 功能全部可用</td></tr>
+            <tr><th scope="row">2013 年后柴油车</th><td>标准 OBD-II 功能可用</td></tr>
+            <tr><th scope="row">主流品牌的私有数据</th><td>已覆盖 177 个品牌、1304 个车型配置、12.5 万条参数定义</td></tr>
+            <tr><th scope="row">2001~2007 汽油车</th><td>多数支持，个别早期车型协议不标准，可能连不上</td></tr>
+            <tr><th scope="row">纯电动车</th><td>一般读不到（少数品牌私有协议可读部分数据）</td></tr>
+            <tr><th scope="row">混动车</th><td>只能读发动机相关部分</td></tr>
+            <tr><th scope="row">24V 货车、客车、工程机械</th><td>不支持</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>两个概念：标准 OBD 和私有协议</h3>
+      <p>这一点客服必须理解，否则一半客诉解释不清。</p>
+      <ul>
+        <li><strong>标准 OBD-II</strong>：国家强制，所有车都有。能读转速、车速、水温、进气温度、节气门、故障码、就绪状态</li>
+        <li><strong>私有协议数据</strong>（油量、总里程、变速箱油温、四驱状态这类）：厂家自己的，不是每台车都有</li>
+      </ul>
+      <div class="note note--ok">
+        <span class="note-label">两条万能答法</span>
+        <p>客户说油量读不出来：先确认车型配置选对没有，仍读不到就是这台车没有开放这项。<br>
+        客户说里程读不出来：<strong>标准 OBD 协议里根本没有里程这一项</strong>，只有部分车型的私有协议能读。</p>
+      </div>
+
+      <h3>手机要求</h3>
+      <div class="tablewrap">
+        <table class="t-compact">
+          <thead>
+            <tr><th scope="col">项</th><th scope="col">要求</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">系统</th><td>iOS 10 以上 / Android 6 以上</td></tr>
+            <tr><th scope="row">微信</th><td>7.0 以上</td></tr>
+            <tr><th scope="row">安卓必须授权</th><td>「附近的设备 / 蓝牙」加「定位」权限。这是安卓系统限制，扫蓝牙必须给定位，不给就扫不到设备</td></tr>
+            <tr><th scope="row">iOS 必须授权</th><td>微信的蓝牙权限</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note note--warn">
+        <span class="note-label">第一诊断项</span>
+        <p>安卓扫不到设备，<strong>九成是权限问题</strong>。客户说连不上，客服第一句就问这个。</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch-04">
+      <span class="chap-label">04 · 连接与使用</span>
+      <h2>连接与使用</h2>
+
+      <h3>标准三步</h3>
+      <ol>
+        <li>车钥匙打到 <strong>ON 档</strong>（仪表盘灯亮，不用发动）</li>
+        <li>把盒子插进 OBD 接口（多数车在驾驶位下方方向盘左侧，少数在扶手箱或引擎舱）</li>
+        <li>打开小程序，点「连接设备」，等扫描，选中设备连接</li>
+      </ol>
+
+      <h3>连不上排查顺序</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">现象</th><th scope="col">原因</th><th scope="col">怎么办</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">搜不到设备</th><td>盒子没插好，或车没通电</td><td>重新插紧，钥匙打到 ON 档</td></tr>
+            <tr><th scope="row">搜不到设备</th><td>安卓没给"定位 / 附近设备"权限</td><td>手机设置 → 应用 → 微信 → 权限，全部打开</td></tr>
+            <tr><th scope="row">搜不到设备</th><td>手机蓝牙没开，或被其他 App 占用</td><td>关掉其他车载 App，重开蓝牙再试</td></tr>
+            <tr><th scope="row">找到了但连不上</th><td>车没通电，或接口接触不良</td><td>钥匙来回切换一次 ON/OFF，重新插拔盒子</td></tr>
+            <tr><th scope="row">连上了但读不到数据</th><td>这台车协议不标准，或熄火后 ECU 已休眠</td><td>打着车再试</td></tr>
+            <tr><th scope="row">用一会儿就断</th><td>手机省电策略杀后台</td><td>把微信加进电池白名单，锁屏时保持小程序在前台</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch-05">
+      <span class="chap-label">05 · 客服红线</span>
+      <h2>客服红线</h2>
+      <p>这一章是必背内容。红线不是"尽量别说"，是<strong>说了就要出事</strong>。</p>
+
+      <h3>绝对不能说</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">不能说</th><th scope="col">为什么</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">"清掉故障码就能过年检"</th><td>教唆规避排放检测，违法违规。正确说法见第 06 章 FAQ-4</td></tr>
+            <tr><th scope="row">"可以帮你改里程"</th><td>里程回拨违法，一律拒绝，不解释技术细节</td></tr>
+            <tr><th scope="row">"这个码清了就好 / 保证修好"</th><td>我们只做诊断，不做维修承诺</td></tr>
+            <tr><th scope="row">"你的车没问题"</th><td>我们只能读电控系统，读不到不等于没故障</td></tr>
+            <tr><th scope="row">"和 4S 店检测结果一模一样"</th><td>设备和数据库不同，说法要留余地</td></tr>
+            <tr><th scope="row">"永久免费"</th><td>当前免费是真的，但不能承诺永久。说"目前全部功能免费使用"</td></tr>
+            <tr><th scope="row">"数据是我们自己研发的"</th><td>数据是多家服务商整合来的，说"自研"被追问就穿帮</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>谨慎表述：换一种说法</h3>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">想说的</th><th scope="col">换成</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>"你这个码必须换某个零件"</td><td>"这个码常见成因有这几种，建议找师傅现场确认"</td></tr>
+            <tr><td>"你的电瓶该换了"</td><td>"电瓶健康度偏低，建议近期关注，是否更换以现场实测为准"</td></tr>
+            <tr><td>"读数不准"</td><td>"读数和 4S 设备的口径不同，我们给的是参考值"</td></tr>
+            <tr><td>"这功能很简单"</td><td>"按页面提示一步步来就行，遇到问题随时找我"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>数据来源（统一口径）</h3>
+      <p>客户问"你们数据哪来的 / 是不是抄的"，按这个说：</p>
+      <div class="say">
+        <p>我们的车型数据整合了多家数据服务商，覆盖 177 个品牌、1304 个车型配置、12.5 万条参数定义；故障码中文解释合并了业内通用库，约 6.7 万条。数据都是正规授权渠道来的，我们不做破解，也不单独售卖数据库，只用在产品功能里。</p>
+        <div class="say-actions">
+          <span class="say-note">数据来源说明</span>
+          <button class="copy" type="button" data-copy="我们的车型数据整合了多家数据服务商，覆盖 177 个品牌、1304 个车型配置、12.5 万条参数定义；故障码中文解释合并了业内通用库，约 6.7 万条。数据都是正规授权渠道来的，我们不做破解，也不单独售卖数据库，只用在产品功能里。">复制</button>
+        </div>
+      </div>
+      <div class="note note--danger">
+        <span class="note-label">三条纪律</span>
+        <p>不主动提任何第三方名称，客户问了也不确认、不否认具体是哪一家；不说"自己研发的"——被追问数据量级和更新频率就会穿帮；不说"买来的"——听起来像转手倒卖，说"整合"更准确。</p>
+      </div>
+
+      <h3>安全相关：一律劝退</h3>
+      <ul>
+        <li>气囊、ABS、防盗系统的编码或刷写</li>
+        <li>ECU 动力改装、刷写程序</li>
+        <li>任何形式的里程修改</li>
+        <li>帮客户"过检测"性质的清码</li>
+      </ul>
+    </section>
+
+    <section class="chapter" id="ch-06" data-qa-group>
+      <span class="chap-label">06 · 高频问答</span>
+      <h2>高频问答</h2>
+      <p>二十五条日常最常被问到的。左上角搜索框可以按关键词直接命中这一章。</p>
+
+      <article class="qa">
+        <h3><span class="qid">FAQ-1</span>我插上怎么一点反应都没有？</h3>
+        <p>钥匙必须打到 ON 档。部分车 OBD 口在停车状态不供电。另外检查插头有没有插到底。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-2</span>会不会伤车、影响质保？</h3>
+        <p>不会。我们只读取标准 OBD 数据，读取动作不改变车辆任何设定。质保是厂家政策，我们不做承诺，但纯读取不会留下记录。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-3</span>会不会把电瓶耗光？</h3>
+        <p>盒子插着会取少量电。长期不开车建议拔下来。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-4</span>故障码能帮我清掉吗？</h3>
+        <p>能清。小程序里点「清除故障码」就行，而且清完会<strong>自动复读一遍</strong>，对比清除前后的数量告诉你到底清掉没有——很多产品不清就告诉你清完了。</p>
+        <p>但要说清两点：故障码是"结果"不是"原因"，灯灭了不代表问题解决了，根因还在会再次出现；<strong>不能为了过排放检测而清码</strong>，这属于弄虚作假，而且清码会让排放监测项回到"未就绪"，反而可能过不了年检。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-5</span>为什么朋友的车能读油量，我的读不出来？</h3>
+        <p>油量、里程属于厂家私有协议，不是每台车都开放。先确认车型配置选对没有，如果这台车确实不提供这项数据，是厂家的限制，不是设备问题。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-6</span>电瓶检测结果准吗？</h3>
+        <p>它通过电压曲线（静置电压、启动瞬间压降、充电电压）来判断，属于<strong>参考性检测</strong>，足够判断"电瓶是否老化到该考虑更换"。要精确测内阻需要专业电导仪，我们不夸大。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-7</span>油耗怎么和实际加油量对不上？</h3>
+        <p>OBD 油耗是根据进气量估算的，正常有 10~15% 误差。想算准就用「记油耗」，每次加油记一笔，按实际加油量对账。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-8</span>为什么数据有时候更新慢？</h3>
+        <p>OBD 是"你问我答"的串行总线，车速、转速、水温这些要轮流问一遍。我们已经做了请求合并优化（多条参数打包成一次请求），数据也做了平滑过渡，不会一跳一跳。这是 OBD 协议的物理限制，同类产品都一样。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-9</span>高级数据为什么有的显示"--"？</h3>
+        <p>那几项你的车不确定支持。默认勾选了「只显示车辆支持的数据」，识别到不支持的会自动隐藏；如果显示"--"说明还在确认中，多看几轮就有。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-10</span>支持新能源车吗？</h3>
+        <p>纯电车基本读不到（电动车不走 OBD 诊断协议）。混动车能读发动机部分。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-11</span>一个盒子能给几台车用？</h3>
+        <p>不限台数，一台手机同时连一个盒子。换车后重新识别一次 VIN 就行。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-12</span>两个人能同时用吗？</h3>
+        <p>不能，蓝牙是一对一连接。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-13</span>必须发动车吗？</h3>
+        <p>读故障码、看静态数据不用发动，钥匙打到 ON 就行。测启动压降、充电电压需要按提示发动。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-14</span>熄火后还能读吗？</h3>
+        <p>熄火 5~10 分钟后多数 ECU 会休眠，就断电了。想读就把钥匙打到 ON。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-15</span>会不会让年检过不了？</h3>
+        <p>不会，反而年检预审能提前看出问题。但注意：<strong>清过码之后别马上去年检</strong>，排放监测需要跑一次完整的驾驶循环才会就绪。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-16</span>私人汽修顾问是真人吗？</h3>
+        <p>是小跃，我们自研的汽修顾问（由石家庄欣流跃迁信息科技有限公司开发和训练），它能看到你车上的数据再给判断。</p>
+        <div class="note note--danger">
+          <span class="note-label">口径</span>
+          <p>不要说"AI 机器人"，也不要提任何第三方模型名称。统一说"我们的汽修顾问小跃"。</p>
+        </div>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-17</span>语音提问识别不准怎么办？</h3>
+        <p>环境太吵或方言重会受影响，建议安静环境、普通话、离手机近一点。识别成文字后会直接作为消息发出去，说错了再打一遍字就行。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-18</span>需要联网吗？</h3>
+        <p>蓝牙读数据不需要联网。顾问、车型配置、VIN 解码需要联网。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-19</span>数据会上传到你们服务器吗？</h3>
+        <p>车辆诊断数据在手机本地处理。需要联网的功能会把必要信息（比如 VIN、你问的问题）传到云端处理，我们不做行车轨迹采集。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-20</span>支持哪些手机？</h3>
+        <p>iOS 10 以上、安卓 6 以上，微信 7.0 以上。安卓需要给定位权限才能扫蓝牙。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-21</span>用了几天不想要了能退吗？</h3>
+        <p>按平台七天无理由政策执行。不要口头承诺"一定能退"，说"以平台规则为准，我帮你走流程"。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-22</span>有说明书吗？</h3>
+        <p>小程序里每一步都有提示，不用看纸质说明书。也可以找我，我发图文教程给你。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-23</span>为什么修理厂说没问题，你们报故障码？</h3>
+        <p>口径不同。修理厂可能按经验判断"不影响开"，我们只是把 ECU 里存的码读出来。码存在不等于必须修，具体要现场判断。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-24</span>为什么修理厂报的码你们没有？</h3>
+        <p>我们读的是发动机等电控系统。变速箱、ABS、气囊这类系统，不同车型开放程度不同，部分车型我们读不全，属于正常。</p>
+      </article>
+      <article class="qa">
+        <h3><span class="qid">FAQ-25</span>能当专业诊断仪用吗？能接活修车吗？</h3>
+        <p>可以辅助判断，定位是"让车主看懂自己的车"，不替代专业诊断设备和维修经验。修理厂用来做快速初检是够的。</p>
+      </article>
+
+      <p class="empty-state">这一章没有匹配的问题，换个关键词试试，或者直接转产品侧。</p>
+    </section>
+
+    <section class="chapter" id="ch-07" data-qa-group>
+      <span class="chap-label">07 · 刁钻问题</span>
+      <h2>刁钻问题</h2>
+      <p>客户带着情绪或者带着坑来的。每条都给了完整话术，可以直接复制。</p>
+
+      <article class="qa">
+        <h3><span class="qid">Q1</span>「你们这不就是抄 CarScanner 的吗？」</h3>
+        <div class="say">
+          <p>我们的车型数据是整合了多家数据服务商，都是正规授权渠道，不是破解也不是抄袭。数据本身我们不单独售卖，只用在产品功能里。</p>
+          <div class="say-actions">
+            <span class="say-note">客户点名具体产品时，不确认也不否认</span>
+            <button class="copy" type="button" data-copy="我们的车型数据是整合了多家数据服务商，都是正规授权渠道，不是破解也不是抄袭。数据本身我们不单独售卖，只用在产品功能里。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q2</span>「清码会不会把 ECU 搞坏？」</h3>
+        <div class="say">
+          <p>清除故障码是标准 OBD 指令，只清故障码和冻结帧，不会动车辆的自适应学习值和标定数据。清完之后车可能需要跑一段路重新学习怠速，属于正常现象。</p>
+          <div class="say-actions">
+            <span class="say-note">讲机制，不讲保证</span>
+            <button class="copy" type="button" data-copy="清除故障码是标准 OBD 指令，只清故障码和冻结帧，不会动车辆的自适应学习值和标定数据。清完之后车可能需要跑一段路重新学习怠速，属于正常现象。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q3</span>「能不能帮我清个码，好过年检？」</h3>
+        <div class="say">
+          <p>清码的功能是有的，但为了通过排放检测去清码，这个我们帮不了，也不建议。而且清完码排放监测项会变成未就绪，年检反而更可能卡住。建议先做年检预审，看是哪一项没过，处理完再去。</p>
+          <div class="say-actions">
+            <span class="say-note">红线：不要因为客户施压就松口</span>
+            <button class="copy" type="button" data-copy="清码的功能是有的，但为了通过排放检测去清码，这个我们帮不了，也不建议。而且清完码排放监测项会变成未就绪，年检反而更可能卡住。建议先做年检预审，看是哪一项没过，处理完再去。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q4</span>「修理厂说我这车要大修，你们检测说没事，是不是不准？」</h3>
+        <div class="say">
+          <p>我们只能读到电控系统记录的信息。机械磨损、油路、底盘这类问题，车上不报故障码，我们也不会说"没问题"——在我们这里显示的是"没有故障码"，不是"车况良好"。建议把我们的检测结果给师傅看，两边结合判断。</p>
+          <div class="say-actions">
+            <span class="say-note">把"没故障码"和"车况良好"拆开</span>
+            <button class="copy" type="button" data-copy="我们只能读到电控系统记录的信息。机械磨损、油路、底盘这类问题，车上不报故障码，我们也不会说没问题——在我们这里显示的是没有故障码，不是车况良好。建议把我们的检测结果给师傅看，两边结合判断。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q5</span>「为什么 4S 店能读到的数据，你们读不到？」</h3>
+        <div class="say">
+          <p>4S 用的是厂家专有设备，能解锁全部私有协议。我们是通过授权数据库覆盖 177 个品牌、1304 个车型的配置，覆盖面已经很大了，但确实有个别车型、个别参数厂家没有开放，属于客观限制。</p>
+          <div class="say-actions">
+            <span class="say-note">承认边界，不硬吹</span>
+            <button class="copy" type="button" data-copy="4S 用的是厂家专有设备，能解锁全部私有协议。我们是通过授权数据库覆盖 177 个品牌、1304 个车型的配置，覆盖面已经很大了，但确实有个别车型、个别参数厂家没有开放，属于客观限制。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q6</span>「能读变速箱、ABS、气囊的故障码吗？」</h3>
+        <div class="say">
+          <p>不同车型开放程度不同。部分车型支持读取变速箱等系统，气囊这类安全系统一般是不开放的。我可以帮你确认你的车型落不落在支持范围里。</p>
+          <div class="say-actions">
+            <span class="say-note">不承诺，给下一步</span>
+            <button class="copy" type="button" data-copy="不同车型开放程度不同。部分车型支持读取变速箱等系统，气囊这类安全系统一般是不开放的。我可以帮你确认你的车型落不落在支持范围里。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q7</span>「能改里程吗？」「能刷隐藏功能吗？」</h3>
+        <div class="say">
+          <p>改里程是违法的，我们不做。隐藏功能的编码有一部分，但属于实验性功能，每个功能页面都有风险提示，需要你自己确认清楚再操作。</p>
+          <div class="say-actions">
+            <span class="say-note">改里程一律拒绝，不解释技术细节</span>
+            <button class="copy" type="button" data-copy="改里程是违法的，我们不做。隐藏功能的编码有一部分，但属于实验性功能，每个功能页面都有风险提示，需要你自己确认清楚再操作。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q8</span>「我车是 2010 年的老车，能用吗？」</h3>
+        <div class="say">
+          <p>大概率能用。2001 年之后的车多数支持标准 OBD，2008 年以后的汽油车基本都能读。老车主要影响的是私有数据，比如油量、里程可能读不到。</p>
+          <div class="say-actions">
+            <span class="say-note">诚实说明老车限制</span>
+            <button class="copy" type="button" data-copy="大概率能用。2001 年之后的车多数支持标准 OBD，2008 年以后的汽油车基本都能读。老车主要影响的是私有数据，比如油量、里程可能读不到。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q9</span>「货车能用吗？」</h3>
+        <p>不支持。24V 的货车、客车、工程机械用的是另外一套协议。</p>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q10</span>「为什么我车上一堆数据都显示不支持？」</h3>
+        <div class="say">
+          <p>标准 OBD 只强制要求一部分参数，比如转速、车速、水温，其他都是厂家自愿开放的，所以会看到有些项目不支持。小程序默认勾选了「只显示车辆支持的数据」，勾上之后页面会干净很多。</p>
+          <div class="say-actions">
+            <span class="say-note">解释协议，不推给设备</span>
+            <button class="copy" type="button" data-copy="标准 OBD 只强制要求一部分参数，比如转速、车速、水温，其他都是厂家自愿开放的，所以会看到有些项目不支持。小程序默认勾选了只显示车辆支持的数据，勾上之后页面会干净很多。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q11</span>「高级数据为什么这么慢？」</h3>
+        <div class="say">
+          <p>高级数据是厂家私有协议，一条一条问，而且每条要先学会它的返回长度，所以第一次打开会慢一些，页面上有进度提示。点开之后就不用再等了。</p>
+          <div class="say-actions">
+            <span class="say-note">给原因，给预期</span>
+            <button class="copy" type="button" data-copy="高级数据是厂家私有协议，一条一条问，而且每条要先学会它的返回长度，所以第一次打开会慢一些，页面上有进度提示。点开之后就不用再等了。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q12</span>「顾问回答的是不是网上抄的？」</h3>
+        <div class="say">
+          <p>小跃的回答是结合你车上的实时数据生成的——故障码、水温、电压、油耗它都能看到，不是通用模板。你可以试试问一句"我车现在怠速抖是什么原因"，它会给针对性的判断。</p>
+          <div class="say-actions">
+            <span class="say-note">引导客户自己试</span>
+            <button class="copy" type="button" data-copy="小跃的回答是结合你车上的实时数据生成的——故障码、水温、电压、油耗它都能看到，不是通用模板。你可以试试问一句我车现在怠速抖是什么原因，它会给针对性的判断。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q13</span>「为什么顾问不直接告诉我换什么件？」</h3>
+        <div class="say">
+          <p>因为同一个故障码可能对应好几种原因，从代码层面判断不出具体是哪一个。所以小跃会给你排查顺序——先看什么、后看什么，把钱花在刀刃上，而不是直接让你换件。</p>
+          <div class="say-actions">
+            <span class="say-note">把限制讲成优点</span>
+            <button class="copy" type="button" data-copy="因为同一个故障码可能对应好几种原因，从代码层面判断不出具体是哪一个。所以小跃会给你排查顺序——先看什么、后看什么，把钱花在刀刃上，而不是直接让你换件。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q14</span>「能不能远程帮我看看我的车？」</h3>
+        <p>诊断必须现场插设备，远程做不了。你可以把故障扫描的结果截图发我，我帮你看含义和下一步建议。</p>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q15</span>「买回来发现读不到我车的数据，能退吗？」</h3>
+        <div class="say">
+          <p>先别急着退，我们先排查三步：钥匙是不是 ON 档，安卓有没有给定位权限，车型是不是老车。如果确认是不支持，按平台规则给你走退货流程。</p>
+          <div class="say-actions">
+            <span class="say-note">先排查，再谈退</span>
+            <button class="copy" type="button" data-copy="先别急着退，我们先排查三步：钥匙是不是 ON 档，安卓有没有给定位权限，车型是不是老车。如果确认是不支持，按平台规则给你走退货流程。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q16</span>「你们和别的品牌比好在哪？」</h3>
+        <div class="say">
+          <p>同类产品各有侧重。我们的差异主要在三方面：一是微信小程序，不用装 App；二是车型数据覆盖 177 个品牌、1304 个车型配置，私有数据比较全；三是有能结合车况数据的汽修顾问，可以直接问它。</p>
+          <div class="say-actions">
+            <span class="say-note">不贬低同行</span>
+            <button class="copy" type="button" data-copy="同类产品各有侧重。我们的差异主要在三方面：一是微信小程序，不用装 App；二是车型数据覆盖 177 个品牌、1304 个车型配置，私有数据比较全；三是有能结合车况数据的汽修顾问，可以直接问它。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q17</span>「这个小程序以后收费吗？」</h3>
+        <div class="say">
+          <p>目前全部功能都是免费使用的，没有任何会员和内购。以后如果推出增值功能，现有的基础功能也会保持免费。</p>
+          <div class="say-actions">
+            <span class="say-note">不给永久承诺</span>
+            <button class="copy" type="button" data-copy="目前全部功能都是免费使用的，没有任何会员和内购。以后如果推出增值功能，现有的基础功能也会保持免费。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q18</span>「会不会泄露我的位置隐私？」</h3>
+        <div class="say">
+          <p>盒子只通过 OBD 接口读车辆数据，不含定位模块，也不采集你的位置和行驶轨迹。需要联网的功能只传必要信息。</p>
+          <div class="say-actions">
+            <span class="say-note">说清采集边界</span>
+            <button class="copy" type="button" data-copy="盒子只通过 OBD 接口读车辆数据，不含定位模块，也不采集你的位置和行驶轨迹。需要联网的功能只传必要信息。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q19</span>「我插上以后故障灯自己灭了，是不是你们弄坏的？」</h3>
+        <div class="say">
+          <p>不会，我们只做读取操作。故障灯灭有两种可能：一是这个故障是间歇性的，灯本来就会自己灭；二是刚在别的店做过操作。可以现在重新扫一遍，看码还在不在——码如果还在，说明故障没消失，只是灯灭了。</p>
+          <div class="say-actions">
+            <span class="say-note">用"再扫一遍"给客户确定感</span>
+            <button class="copy" type="button" data-copy="不会，我们只做读取操作。故障灯灭有两种可能：一是这个故障是间歇性的，灯本来就会自己灭；二是刚在别的店做过操作。可以现在重新扫一遍，看码还在不在——码如果还在，说明故障没消失，只是灯灭了。">复制</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="qa">
+        <h3><span class="qid">Q20</span>「昨天还能读，今天连不上了？」</h3>
+        <p>按顺序试：重新插拔盒子，钥匙打到 ON 档，手机蓝牙重启，关掉其他连过 OBD 的 App。如果还不行，把盒子的指示灯状态和手机型号发我。</p>
+      </article>
+
+      <p class="empty-state">这一章没有匹配的问题，换个关键词试试，或者直接转产品侧。</p>
+    </section>
+
+    <section class="chapter" id="ch-08">
+      <span class="chap-label">08 · 升级技服</span>
+      <h2>必须升级给技术的场景</h2>
+      <p>下面这些不要自己猜，直接登记转技术：</p>
+      <ol>
+        <li>同一车型、多人反馈同一功能不可用</li>
+        <li>连接过程中出现英文报错、代码，或页面白屏</li>
+        <li>客户提供了完整的连接日志（截图五张以上）</li>
+        <li>服务功能执行后 ECU 报错，或车辆出现异常</li>
+        <li>顾问回答明显错误，比如给出和常识矛盾的数据</li>
+        <li>支付、物流、退换货争议升级</li>
+      </ol>
+      <h3>登记模板</h3>
+      <div class="say">
+        <p>【车型】品牌 + 车型 + 年款 + VIN 后 6 位
+【手机】型号 + 系统版本
+【问题】哪一步、什么现象、能否复现
+【截图】连接页 / 报错页 / 数据页
+【已试】已经让客户做过哪些操作</p>
+        <div class="say-actions">
+          <span class="say-note">直接复制，填完发技术群</span>
+          <button class="copy" type="button" data-copy="【车型】品牌 + 车型 + 年款 + VIN 后 6 位【手机】型号 + 系统版本【问题】哪一步、什么现象、能否复现【截图】连接页 / 报错页 / 数据页【已试】已经让客户做过哪些操作">复制</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch-09">
+      <span class="chap-label">09 · 话术模板</span>
+      <h2>话术模板</h2>
+      <p>五个最常用的场景，改个车型名就能发。</p>
+
+      <h3>开场（有购买意向）</h3>
+      <div class="say">
+        <p>您好，这款是我们自己做的小程序加蓝牙盒子，插上就能读故障码、测电瓶、看实时数据，小程序不用下载也不用会员。想了解哪块我可以详细说。</p>
+        <div class="say-actions">
+          <span class="say-note">先讲形态，再讲功能</span>
+          <button class="copy" type="button" data-copy="您好，这款是我们自己做的小程序加蓝牙盒子，插上就能读故障码、测电瓶、看实时数据，小程序不用下载也不用会员。想了解哪块我可以详细说。">复制</button>
+        </div>
+      </div>
+
+      <h3>客户问一个听不懂的功能</h3>
+      <div class="say">
+        <p>简单说就是：它能帮你把车上藏着的故障信息读出来，用中文告诉你是怎么回事。您是什么车？我看看您这台车能用到哪些功能。</p>
+        <div class="say-actions">
+          <span class="say-note">一句话说清，再把话题引到车型</span>
+          <button class="copy" type="button" data-copy="简单说就是：它能帮你把车上藏着的故障信息读出来，用中文告诉你是怎么回事。您是什么车？我看看您这台车能用到哪些功能。">复制</button>
+        </div>
+      </div>
+
+      <h3>客户说"数据不准"</h3>
+      <div class="say">
+        <p>方便把您看到的截图发我吗？我先看下是哪一项。如果确实异常，我登记给技术排查；如果是口径问题，比如油耗和实际加油量有 10% 左右误差，这属于正常范围，我也跟您说清楚。</p>
+        <div class="say-actions">
+          <span class="say-note">先要证据，再给结论</span>
+          <button class="copy" type="button" data-copy="方便把您看到的截图发我吗？我先看下是哪一项。如果确实异常，我登记给技术排查；如果是口径问题，比如油耗和实际加油量有 10% 左右误差，这属于正常范围，我也跟您说清楚。">复制</button>
+        </div>
+      </div>
+
+      <h3>客户情绪激动</h3>
+      <div class="say">
+        <p>非常抱歉给您带来不好的体验，我理解您的心情。您先别急，我一步步帮您定位：麻烦告诉我车型和手机型号，还有是在哪一步卡住的？我一定帮您解决到底。</p>
+        <div class="say-actions">
+          <span class="say-note">先接情绪，再要信息</span>
+          <button class="copy" type="button" data-copy="非常抱歉给您带来不好的体验，我理解您的心情。您先别急，我一步步帮您定位：麻烦告诉我车型和手机型号，还有是在哪一步卡住的？我一定帮您解决到底。">复制</button>
+        </div>
+      </div>
+
+      <h3>客户要退货，但其实是不会用</h3>
+      <div class="say">
+        <p>您先给我 10 分钟，我远程带您走一遍，很多客户都是差一个权限设置。如果还是不行，我马上帮您走退货流程，不让您多跑。</p>
+        <div class="say-actions">
+          <span class="say-note">给台阶，也守住承诺</span>
+          <button class="copy" type="button" data-copy="您先给我 10 分钟，我远程带您走一遍，很多客户都是差一个权限设置。如果还是不行，我马上帮您走退货流程，不让您多跑。">复制</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch-10">
+      <span class="chap-label">10 · 速查表</span>
+      <h2>一页速查表</h2>
+      <p>建议打印出来贴在工位上。</p>
+      <div class="tablewrap">
+        <table class="t-compact">
+          <thead>
+            <tr><th scope="col">客户问</th><th scope="col">一句话答</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">这是什么</th><td>蓝牙 OBD 盒子加微信小程序，自己就能给车做体检</td></tr>
+            <tr><th scope="row">要钱吗</th><td>小程序全部功能免费，没有会员</td></tr>
+            <tr><th scope="row">我车能用吗</th><td>2008 年后汽油车、2013 年后柴油车基本都能用</td></tr>
+            <tr><th scope="row">能读什么</th><td>故障码、实时数据、电瓶、排放监测；部分车型能读油量和里程</td></tr>
+            <tr><th scope="row">读不到油量</th><td>那是厂家私有数据，不是每台车都开放</td></tr>
+            <tr><th scope="row">连不上</th><td>钥匙打到 ON 档，安卓给定位权限，两步解决八成问题</td></tr>
+            <tr><th scope="row">清码会坏车吗</th><td>不会，只清故障码和冻结帧，不动标定数据</td></tr>
+            <tr><th scope="row">能帮过年检吗</th><td>不能为了过检清码，但可以做年检预审提前发现问题</td></tr>
+            <tr><th scope="row">能改里程吗</th><td>不能，违法</td></tr>
+            <tr><th scope="row">数据哪来的</th><td>整合多家数据服务商，正规授权，177 个品牌、1304 个车型配置</td></tr>
+            <tr><th scope="row">有 App 吗</th><td>没有，微信小程序，扫码即用</td></tr>
+            <tr><th scope="row">顾问是真的吗</th><td>我们的汽修顾问小跃，能看到你车上的数据</td></tr>
+            <tr><th scope="row">以后收费吗</th><td>目前免费，基础功能会保持免费</td></tr>
+            <tr><th scope="row">和别家比</th><td>小程序免安装，数据覆盖广，有懂车况的顾问</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="chapter" id="appendix">
+      <span class="chap-label">附录</span>
+      <h2>待补充信息</h2>
+      <p>这几项客服会被反复问到，请业务侧填完后更新这一页。</p>
+      <div class="tablewrap">
+        <table class="t-compact">
+          <thead>
+            <tr><th scope="col">项</th><th scope="col">为什么重要</th><th scope="col">内容</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">盒子接口类型</th><td>客户问"我的车能不能插"</td><td>—</td></tr>
+            <tr><th scope="row">指示灯含义</th><td>客户高频提问"蓝灯一直闪是什么意思"</td><td>—</td></tr>
+            <tr><th scope="row">包装清单</th><td>发货咨询与售后核对</td><td>—</td></tr>
+            <tr><th scope="row">工作温度与防护</th><td>有客户问夏天暴晒能不能用</td><td>—</td></tr>
+            <tr><th scope="row">保修期与范围</th><td>与平台售后政策对齐</td><td>—</td></tr>
+            <tr><th scope="row">七天无理由细则</th><td>拆封后是否支持、运费谁承担</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <span>跃行·行车宝 · 客服手册 v1</span>
+      <span>2026-09</span>
+      <span>内部资料，请勿外发</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var rail = document.getElementById('rail');
+  var toggle = document.getElementById('railToggle');
+  var input = document.getElementById('q');
+  var meta = document.getElementById('qMeta');
+  var empty = document.getElementById('emptyState');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.qa'));
+  var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+  var origin = new Map();
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  items.forEach(function (el) { origin.set(el, el.innerHTML); });
+
+  /* 高亮：只在文本节点里插 mark，跳过按钮等交互元素 */
+  function highlight(root, needle) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = node.parentNode;
+        while (p && p !== root) {
+          if (p.tagName === 'BUTTON' || p.tagName === 'MARK' || p.tagName === 'SCRIPT') return NodeFilter.FILTER_REJECT;
+          p = p.parentNode;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var hits = [];
+    var node;
+    while ((node = walker.nextNode())) {
+      if (node.nodeValue.toLowerCase().indexOf(needle) >= 0) hits.push(node);
+    }
+    hits.forEach(function (n) {
+      var text = n.nodeValue;
+      var frag = document.createDocumentFragment();
+      var pos = 0;
+      var idx;
+      var lower = text.toLowerCase();
+      while ((idx = lower.indexOf(needle, pos)) >= 0) {
+        if (idx > pos) frag.appendChild(document.createTextNode(text.slice(pos, idx)));
+        var mark = document.createElement('mark');
+        mark.textContent = text.slice(idx, idx + needle.length);
+        frag.appendChild(mark);
+        pos = idx + needle.length;
+      }
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      n.parentNode.replaceChild(frag, n);
+    });
+  }
+
+  function search() {
+    var q = input.value.trim().toLowerCase();
+    var hit = 0;
+    items.forEach(function (el) {
+      el.innerHTML = origin.get(el);
+      var ok = !q || el.textContent.toLowerCase().indexOf(q) >= 0;
+      el.hidden = !ok;
+      if (ok) {
+        hit++;
+        if (q) highlight(el, q);
+      }
+    });
+    document.querySelectorAll('[data-qa-group]').forEach(function (group) {
+      var visible = group.querySelectorAll('.qa:not([hidden])').length;
+      group.querySelector('.empty-state').classList.toggle('is-on', q !== '' && visible === 0);
+    });
+    if (!q) {
+      meta.textContent = '';
+      meta.removeAttribute('data-tone');
+    } else if (hit) {
+      meta.textContent = hit + ' 条匹配';
+      meta.setAttribute('data-tone', 'hit');
+    } else {
+      meta.textContent = '没找到，换个说法或直接问产品侧';
+      meta.setAttribute('data-tone', 'miss');
+    }
+  }
+
+  var timer = null;
+  input.addEventListener('input', function () {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(search, 120);
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; search(); }
+  });
+
+  /* 复制话术 */
+  function flash(btn, text) {
+    var label = btn.textContent;
+    btn.textContent = text;
+    btn.classList.add('is-done');
+    setTimeout(function () {
+      btn.textContent = label;
+      btn.classList.remove('is-done');
+    }, 1500);
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.copy') : null;
+    if (!btn) return;
+    var text = btn.getAttribute('data-copy') || '';
+    var done = function () { flash(btn, '已复制'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { legacy(text, done); });
+    } else {
+      legacy(text, done);
+    }
+  });
+  function legacy(text, done) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { flash(document.querySelector('.copy'), '手动选中'); }
+    document.body.removeChild(ta);
+  }
+
+  /* 目录跳转 */
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduced.matches ? 'auto' : 'smooth', block: 'start' });
+      var head = target.querySelector('h2');
+      if (head) {
+        head.setAttribute('tabindex', '-1');
+        head.focus({ preventScroll: true });
+      }
+      target.classList.add('is-jump');
+      setTimeout(function () { target.classList.remove('is-jump'); }, 1100);
+      rail.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  /* 移动端目录 */
+  toggle.addEventListener('click', function () {
+    var open = rail.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && rail.classList.contains('is-open')) {
+      rail.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', function (e) {
+    if (!rail.classList.contains('is-open')) return;
+    if (rail.contains(e.target)) return;
+    rail.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+
+  /* 当前章节：滚动位置判定（比 IntersectionObserver 更可控，短文档也不会漏触发） */
+  var activeId = '';
+  function markActive() {
+    var line = window.scrollY + window.innerHeight * 0.3;
+    var current = chapters[0];
+    chapters.forEach(function (c) {
+      if (c.offsetTop <= line) current = c;
+    });
+    if (!current || current.id === activeId) return;
+    activeId = current.id;
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + current.id) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll', markActive, { passive: true });
+  window.addEventListener('resize', markActive);
+  markActive();
+})();
+</script>
+</body>
+</html>

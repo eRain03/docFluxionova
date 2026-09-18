@@ -1,0 +1,65 @@
+/* Hallmark · 跃行·行车宝 客服手册 · 设计令牌（便携导出）
+ * 页面内联了一份同样的令牌，保证 docs/kefu.html 单文件可发；这里供其他页面复用。
+ * theme: custom · axes: light / roman-serif / cool
+ */
+:root {
+  /* 纸面 */
+  --color-paper: oklch(97.5% 0.010 262);
+  --color-paper-2: oklch(99.4% 0.006 262);
+  --color-paper-3: oklch(95.0% 0.014 262);
+  /* 墨色 */
+  --color-ink: oklch(23% 0.032 262);
+  --color-ink-2: oklch(42% 0.028 262);
+  --color-muted: oklch(52% 0.022 262);
+  /* 分隔 */
+  --color-rule: oklch(90.5% 0.014 262);
+  --color-rule-2: oklch(94.5% 0.011 262);
+  /* 主色：填充配白字 5.44:1，作正文色 5.28:1 */
+  --color-accent: oklch(52% 0.19 259);
+  --color-accent-ink: oklch(98.5% 0.008 262);
+  --color-accent-soft: oklch(94.5% 0.030 259);
+  --color-focus: oklch(56% 0.21 259);
+  /* 语义色（浅底 + 深字，均 ≥6:1） */
+  --color-danger: oklch(48% 0.19 25);
+  --color-danger-soft: oklch(96% 0.022 25);
+  --color-ok: oklch(44% 0.13 152);
+  --color-ok-soft: oklch(96.5% 0.020 152);
+  --color-warn: oklch(45% 0.12 70);
+  --color-warn-soft: oklch(96.5% 0.030 80);
+  /* 字体 */
+  --font-display: "Source Han Serif SC", "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif SC", Georgia, "Times New Roman", serif;
+  --font-body: "PingFang SC", "HarmonyOS Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+  --font-label: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+  /* 间距（4pt） */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  /* 字号 */
+  --text-xs: 12.5px;
+  --text-sm: 13.5px;
+  --text-base: 15.5px;
+  --text-lg: 17px;
+  --text-xl: 21px;
+  --text-2xl: 27px;
+  --text-display: clamp(30px, 4.4vw, 43px);
+  /* 圆角 / 缓动 / 层级 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 130ms;
+  --dur-base: 180ms;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  /* 版心 */
+  --measure: 68ch;
+  --rail-w: 264px;
+  --page-max: 1160px;
+}
